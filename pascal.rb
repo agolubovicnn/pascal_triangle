@@ -3,7 +3,7 @@ class Pascal
     (1..n).reduce(1, :*)
   end
 
-  def bin_element(n, k)
+  def bin_coefficient(n, k)
     fact(n)/(fact(k) * fact(n-k))
   end
 
@@ -13,7 +13,7 @@ class Pascal
     rows_num.times do |row|
       result = []
       row.times do |row_element|
-        result << bin_element(row, row_element)
+        result << bin_coefficient(row, row_element)
       end
       result << 1
       pascal << result
