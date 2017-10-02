@@ -1,4 +1,4 @@
-require_relative '../pascal'
+require_relative 'lib/pascal'
 
 puts "Please enter number of rows!"
 rows_num = gets.to_i
