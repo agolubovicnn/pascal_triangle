@@ -6,21 +6,17 @@ class Pascal
 
     row = [row_first,row_last].transpose
 
-    row.map {|left, right| left + right }
-  end
-
-  def triangle_row(row)
-    init_num = [1]
-    row.times.reduce(init_num) {|row_element| triangle(row_element)}
+    row.map {|left, right| left + right}
   end
 
   def calculate(rows_num)
-    rows_num += 1
-    result = []
+    rows_num -= 1
+    pascal = [[1]]
     rows_num.times do |row|
-      result << triangle_row(row)
+      row_element = pascal[row]
+      pascal << triangle(row_element)
     end
-    result
+    pascal
   end
 
   def pascal_triangle(rows_num)
